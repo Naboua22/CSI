@@ -54,6 +54,7 @@ class AnneeController extends Controller
     public function edit($id)
     {
         $annee = AnneeAcademique::findOrFail($id);
+        
         return view('edit_annee', ['annee' => $annee]);
     }
 

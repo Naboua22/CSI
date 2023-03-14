@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\AnneeController;
+use App\Http\Controllers\ECUController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\UEController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,5 +34,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('/dashbord/annee', AnneeController::class)->middleware(['auth', 'verified']);
+Route::resource('/dashbord/program', ProgramController::class)->middleware(['auth', 'verified']);
+Route::resource('/dashbord/UE', UEController::class)->middleware(['auth', 'verified']);
+Route::resource('/dashbord/ECU', ECUController::class)->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
