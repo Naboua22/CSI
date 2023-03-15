@@ -15,7 +15,7 @@
                     </h2>
                 </div>
                 <div class="flex mt-4 md:mt-0 md:ml-4">
-                    <a href="{{ route('annee.create') }}" class="inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-black bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <a href="{{ route('UE.create') }}" class="inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-black bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         Créer
                     </a>
                 </div>
@@ -32,10 +32,13 @@
                               Id
                             </th>
                             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                              Date de début
+                              Nombre ECU
                             </th>
                             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                              Date de fin
+                              Masse horaire Total
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                              Masse horaire Effectuée
                             </th>
                             {{-- <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                               Email
@@ -49,17 +52,23 @@
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach ($annees as $annee)
+                          @foreach ($ues as $ue)
 
                             <tr class="bg-black">
                               <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
-                                  {{$annee->id}}
+                                  {{$ue->id}}
+                              </td>
+                              <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
+                                {{$ue->nom}}
+                            </td>
+                              <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                {{$ue->nombreECU}}
                               </td>
                               <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                {{$annee->dateDebut}}
+                                {{$ue->masseHoraireTotal}}
                               </td>
                               <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                {{$annee->dateFin}}
+                                {{$ue->masseHoraireEffectué}}
                               </td>
                               {{-- <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                                 jane.cooper@example.com
@@ -68,10 +77,10 @@
                                 Admin
                               </td> --}}
                               <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                                <a href="{{ route('annee.edit', $annee) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                <a href="{{ route('UE.edit', $ue) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                               </td>
                               <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                                <form action="{{ route('annee.destroy', $annee) }}" method="POST">
+                                <form action="{{ route('UE.destroy', $ue) }}" method="POST">
                                   @csrf
                                   @method('DELETE')
                                   <button class="text-red-600 hover:text-indigo-900" type="submit">Delete</button>

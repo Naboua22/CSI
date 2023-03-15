@@ -33,11 +33,11 @@ class ProgramController extends Controller
      */
     public function store(StoreProgrammeRequest $request)
     {
-        $program = new AnneeAcademique();
+        $program = new Programme();
         $program->nom = $request->nom;
         $program->filiere = $request->filiere;
         $program->nombre_ue = $request->nombre_ue;
-        $program->annee_id = $request->annee_id;
+        $program->annee_academique_id = $request->annee_id;
         
         $program->save();
 
@@ -58,9 +58,9 @@ class ProgramController extends Controller
     public function edit($id)
     {
         $program = Programme::findOrFail($id);
-        $annee = AnneeAcademique::findOrFail($id);
+        $annees = AnneeAcademique::all();
 
-        return view('edit_program', ['program' => $program, 'annee' => $annee]);
+        return view('edit_program', ['program' => $program, 'annees' => $annees]);
     }
 
     /**

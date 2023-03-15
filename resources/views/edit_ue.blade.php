@@ -21,48 +21,20 @@
     <div >
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
     
-            <form class="space-y-8 divide-y divide-gray-200" method="POST" action="{{route('program.update', $annee)}}">
+            <form class="space-y-8 divide-y divide-gray-200" method="POST" action="{{route('UE.update', $annee)}}">
                 @csrf
                 @method('PUT')
                 <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5">
                     <div>
-    
-                        <div class="space-y-6 sm:space-y-5">
-                            <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                                <label for="nom" class="block text-md text-gray-700 sm:mt-px sm:pt-2">
-                                    Nom
-                                </label>
-                                <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                <input type="text" value="{{$program->nom}}" name="nom" id="nom" autocomplete="given-name" class="block w-full  border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                </div>
-                            </div>
 
-                            div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                                <label for="annee_id" class="block text-md text-gray-700 sm:mt-px sm:pt-2">
-                                    Année Académique
-                                </label>
-                                <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                <input type="integer" name="annee_id" id="annee_id" autocomplete="given-name" class="block w-full  border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                </div>
+                        <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+                            <label for="nombre_effectue" class="block text-md text-gray-700 sm:mt-px sm:pt-2">
+                                Nombre d'heure effectué
+                            </label>
+                            <div class="mt-1 sm:mt-0 sm:col-span-2">
+                            <input type="text" name="nombre_effectue" id="nombre_effectue" autocomplete="given-name" class="block w-full  border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
-
-                            <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                                <label for="filiere" class="block text-md text-gray-700 sm:mt-px sm:pt-2">
-                                    Filiere
-                                </label>
-                                <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                <input type="text" value="{{$program->filiere}} name="filiere" id="filiere" autocomplete="given-name" class="block w-full  border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                </div>
-                            </div>
-
-                            <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                                <label for="nombre_ue" class="block text-md text-gray-700 sm:mt-px sm:pt-2">
-                                    Nombre d'UE
-                                </label>
-                                <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                <input type="integer" value="{{$program->nombre_ue}} name="nombre_ue" id="nombre_ue" autocomplete="given-name" class="block w-full  border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                </div>
-                            </div>
+                        </div>
     
                     </div>
     

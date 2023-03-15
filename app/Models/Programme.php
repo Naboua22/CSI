@@ -15,7 +15,7 @@ class Programme extends Model
         'nom',
         'nombreUE',
         'filiere',
-        'annee_id',
+        'annee_academique_id',
     ];
 
     public function anneeAcademique(): BelongsTo

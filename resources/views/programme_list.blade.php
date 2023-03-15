@@ -32,11 +32,17 @@
                               Id
                             </th>
                             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                              Date de début
+                              Année Académique
                             </th>
                             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                              Date de fin
+                              Filière
                             </th>
+                            <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                Nom
+                              </th>
+                              <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                Nombre d'UE
+                              </th>
                             {{-- <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                               Email
                             </th>
@@ -56,7 +62,7 @@
                                   {{$program->id}}
                               </td>
                               <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                {{$program->annee_id}}
+                                {{$program->anneeAcademique->nom}}
                               </td>
                               <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                                 {{$program->filiere}}
@@ -65,7 +71,7 @@
                                 {{$program->nom}}
                               </td>
                               <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                {{$program->nombreUE}}
+                                {{$program->nombre_ue}}
                               </td>
                               {{-- <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                                 jane.cooper@example.com

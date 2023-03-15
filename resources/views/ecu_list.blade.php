@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('UE') }}
+            {{ __('ECU') }}
         </h2>
     </x-slot>
 
@@ -15,7 +15,7 @@
                     </h2>
                 </div>
                 <div class="flex mt-4 md:mt-0 md:ml-4">
-                    <a href="{{ route('annee.create') }}" class="inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-black bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <a href="{{ route('ECU.create') }}" class="inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-black bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         Créer
                     </a>
                 </div>
@@ -32,10 +32,16 @@
                               Id
                             </th>
                             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                              Date de début
+                              Nom
                             </th>
                             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                              Date de fin
+                              Nom ENseignant
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                              Masse horaire total
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                              Masse horaire effectué
                             </th>
                             {{-- <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                               Email
@@ -49,17 +55,23 @@
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach ($annees as $annee)
+                          @foreach ($ecus as $ecu)
 
                             <tr class="bg-black">
                               <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
-                                  {{$annee->id}}
+                                  {{$ecu->id}}
                               </td>
                               <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                {{$annee->dateDebut}}
+                                {{$ecu->nom}}
                               </td>
                               <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                {{$annee->dateFin}}
+                                {{$ecu->nom_enseignant}}
+                              </td>
+                              <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                {{$ecu->masse_horaire_total}}
+                              </td>
+                              <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                {{$ecu->masse_horaire_ecoulee}}
                               </td>
                               {{-- <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                                 jane.cooper@example.com
@@ -68,10 +80,10 @@
                                 Admin
                               </td> --}}
                               <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                                <a href="{{ route('annee.edit', $annee) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                <a href="{{ route('ECU.edit', $ecu) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                               </td>
                               <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                                <form action="{{ route('annee.destroy', $annee) }}" method="POST">
+                                <form action="{{ route('ECU.destroy', $ecu) }}" method="POST">
                                   @csrf
                                   @method('DELETE')
                                   <button class="text-red-600 hover:text-indigo-900" type="submit">Delete</button>

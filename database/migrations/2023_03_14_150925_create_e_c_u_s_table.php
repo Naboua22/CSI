@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('nom_enseignant');
             $table->integer('masse_horaire_total');
             $table->integer('masse_horaire_ecoulee');
+            $table ->foreignId('ue_id')
+            ->constrained()
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
             $table->timestamps();
         });
     }

@@ -11,7 +11,7 @@ class UpdateECURequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,7 @@ class UpdateECURequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nombre_effectue' => "required|Integer|min:1",
         ];
     }
 }

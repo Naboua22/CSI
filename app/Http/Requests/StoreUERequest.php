@@ -11,7 +11,7 @@ class StoreUERequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class StoreUERequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nom' => "required|String|min:2",
+            'nombre_effectue' => "required|Integer",
+            'nombre_ecu' => "required|Integer|min:1",
+            'nombre_total' => "required|Integer",
+            'programme_id' => "required|Integer",
         ];
     }
 }

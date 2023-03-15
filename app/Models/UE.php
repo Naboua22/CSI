@@ -16,6 +16,7 @@ class UE extends Model
         'nombreECU',
         'masseHoraireTotal',
         'masseHoraireEffectué',
+        'programme_id',
     ];
 
     public function programme(): BelongsTo

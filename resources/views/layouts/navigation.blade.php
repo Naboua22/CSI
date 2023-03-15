@@ -27,12 +27,12 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :>
+                    <x-nav-link :href="route('UE.index')" :active="request()->routeIs('UE.index')">
                         {{ __('UE') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link >
+                    <x-nav-link :href="route('ECU.index')" :active="request()->routeIs('ECU.index')">
                         {{ __('ECU') }}
                     </x-nav-link>
                 </div>

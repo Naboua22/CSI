@@ -12,8 +12,10 @@ class ECU extends Model
 
     protected $fillable = [
         'nom',
-        'masseHoraireTotal',
-        'masseHoraireEcoulee',
+        'masse_horaire_total',
+        'masse_horaire_ecoulee',
+        'nom_enseignant',
+        'ue_id',
     ];
 
     public function ue(): BelongsTo

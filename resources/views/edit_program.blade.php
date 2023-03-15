@@ -43,7 +43,7 @@
                                 </label>
                                 
                                 <select name="annee_id" id="annee_id" class=" appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                                    @foreach ($annees as $annee)<option value="{{$annee->id}}">AAAA-AAAA</option>@endforeach
+                                    @foreach ($annees as $annee)<option value="{{$annee->id}}">{{$annee->nom}}</option>@endforeach
                                 </select>
                             </div>
 
