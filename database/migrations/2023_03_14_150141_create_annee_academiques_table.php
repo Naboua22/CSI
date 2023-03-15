@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('annee_academiques', function (Blueprint $table) {
             $table->id();
+            $table->string('nom')->unique();
             $table->date('dateDebut');
             $table->date('dateFin');
             $table->timestamps();

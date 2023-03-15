@@ -23,7 +23,8 @@ class StoreAnneeAcademiqueRequest extends FormRequest
     {
         return [
             'date_debut' => "required|Date",
-            'date_fin' => "required|Date"
+            'date_fin' => "required|Date",
+            'nom' => "required|string",
         ];
     }
 }

@@ -12,7 +12,8 @@ class AnneeAcademique extends Model
 
     protected $fillable = [
         'dateDebut',
-        'dateFin'
+        'dateFin',
+        'nom',
     ];
 
     public function programmes(): HasMany

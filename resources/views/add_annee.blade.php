@@ -45,6 +45,21 @@
                                 <input type="date" name="date_fin" id="date_fin" autocomplete="given-name" class="block w-full  border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                 </div>
                             </div>
+
+                            <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+                                <label for="nom" class="block text-md text-gray-700 sm:mt-px sm:pt-2">
+                                    Nom
+                                </label>
+                                <div class="mt-1 sm:mt-0 sm:col-span-2">
+                                    <input
+                                    class=" appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    id="nom" type="text" placeholder="AAAA-AAAA"
+                                    name="nom" required
+                                    pattern="\d{4}\/-d{4}"
+                                    title="L'année académique doit être au format 'AAAA-AAAA'"
+                                  >
+                                </div>
+                            </div>
     
                     </div>
     

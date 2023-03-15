@@ -34,6 +34,7 @@ class AnneeController extends Controller
         $annee = new AnneeAcademique();
         $annee->dateDebut = $request->date_debut;
         $annee->dateFin = $request->date_fin;
+        $annee->nom = $request->nom;
         
         $annee->save();
 
@@ -54,7 +55,7 @@ class AnneeController extends Controller
     public function edit($id)
     {
         $annee = AnneeAcademique::findOrFail($id);
-        
+
         return view('edit_annee', ['annee' => $annee]);
     }
 
