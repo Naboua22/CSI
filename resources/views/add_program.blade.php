@@ -33,17 +33,33 @@
                                     Nom
                                 </label>
                                 <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                <input type="text" name="nom" id="nom" autocomplete="given-name" class="block w-full  border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <input type="text" name="nom" id="nom" autocomplete="given-name" class=" appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                                 </div>
                             </div>
 
-                            div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+                            <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                                 <label for="annee_id" class="block text-md text-gray-700 sm:mt-px sm:pt-2">
+                                    Année Académique
+                                </label>
+                                <input
+                                  class=" appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                  id="annee_academique" type="text" placeholder="AAAA/AAAA"
+                                  name="annee_academique" required
+                                  pattern="\d{4}\/\d{4}"
+                                  title="L'année académique doit être au format 'AAAA/AAAA'"
+                                >
+                                <select class=" appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                                  <option>AAAA/AAAA</option>
+                                  <option>AAAA/AAAA</option>
+                                  <option>AAAA/AAAA</option>
+                                </select>
+
+                                <!-- <label for="annee_id" class="block text-md text-gray-700 sm:mt-px sm:pt-2">
                                     Année Académique
                                 </label>
                                 <div class="mt-1 sm:mt-0 sm:col-span-2">
                                 <input type="integer" name="annee_id" id="annee_id" autocomplete="given-name" class="block w-full  border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                </div>
+                                </div> -->
                             </div>
 
                             <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
@@ -60,7 +76,10 @@
                                     Nombre d'UE
                                 </label>
                                 <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                <input type="integer" name="nombre_ue" id="nombre_ue" autocomplete="given-name" class="block w-full  border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+
+                                    <input class="appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="number" name="nombre_ue" id="nombre_ue" autocomplete="given-name" placeholder="******************">
+
+                               
                                 </div>
                             </div>
     

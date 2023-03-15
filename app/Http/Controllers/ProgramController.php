@@ -25,7 +25,7 @@ class ProgramController extends Controller
     {
         $annees = AnneeAcademique::all();
 
-        return view('add_annee', ['annees' => $annees]);
+        return view('add_program', ['annees' => $annees]);
     }
 
     /**
